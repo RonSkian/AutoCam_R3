@@ -28,7 +28,7 @@
 //#include "menu.h"
 //#include "rotaryEncoder.h"
 #include "cameraShutter.h"
-//#include "misc.h"
+#include "misc.h"
 #include "initialization.h"
 //#include "fonts.h"
 #include "stepperMotor.h"
@@ -56,8 +56,8 @@ void setup() {
 	//lcd.createChar(7, num0);
 
 	//LCD_ini();                                       // -set up the LCD's number of columns and rows
-	// timerCompare0_ini();
-	//timerCompare1_ini();
+	//timerCompare0_ini();
+	timerCompare1_ini();
 	//timerCompare2_ini();
 	//int0_ini();
 	int1_ini();									// Start the external interrupt for the limit switches
@@ -70,12 +70,12 @@ void setup() {
 ISR(TIMER1_COMPA_vect){                         // -Timer compare 1 A ISR, this regulates the shooting activity
 	noInterrupts();
 	// beginCameraShots();
-	//cSec++;
+	cSec++;
 	interrupts();
 }
                                                     
 ISR(TIMER2_COMPA_vect){                         // -Timer compare 2 A ISR, this regulates the shooting activity
-	noInterrupts();                              // -disable all interrupts
+	noInterrupts();                             // -disable all interrupts
 	interrupts();
 	//updt_currLocation_rotaryTurn(); 
 	//updt_contShutterInterval();
@@ -118,6 +118,7 @@ void loop()  {                                  // -Menu navigation being is dis
 	//CSSProc();
 
 	//takePicture();
+	camContinuous(10, 3, 5);
 	delay(10000);
 }
 

@@ -3,6 +3,7 @@
 #include <avr/interrupt.h>
 #include "globalVariables.h"
 #include "cameraShutter.h"
+#include "misc.h"
 
 
 void takePicture(void){
@@ -18,6 +19,28 @@ void takePicture(void){
 	delay(10);
 }
 
+void camContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF){
+	//// This function allows the camera to continously shoot given the parameters set by the user
+	//// NOF = Number of Frames
+	//// SSC = Shutter Speed Compensation (measured in seconds)
+	//// TBF  = Time Between Frames
+
+	//unsigned char cF;
+	////cF = current frame
+
+	delay(50);
+	//Delay just a moment so the person is well away from the controls that might cause vibration to the camera
+	takePicture();
+	//delaySeconds_ini();
+	//cF++;
+	//while(NOF != cF){
+	//	if(delaySeconds_chk(SSC)){
+	//		takePicture();
+	//		cF++;
+	//	}
+	//}
+}
+
 //void camContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF){
 //	// This function allows the camera to continously shoot given the parameters set by the user
 //	// NOF = Number of Frames
@@ -25,7 +48,7 @@ void takePicture(void){
 //	// TBF  = Time Between Frames
 //
 //	unsigned char cF;
-//	//current frame
+//	//cF = current frame
 //
 //	delay(50);
 //	//Delay just a moment so the person is well away from the controls that might cause vibration to the camera
@@ -37,4 +60,5 @@ void takePicture(void){
 //			takePicture();
 //			cF++;
 //		}
+//	}
 //}

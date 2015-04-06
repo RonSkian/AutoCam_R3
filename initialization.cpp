@@ -6,7 +6,7 @@
 #include "stepperMotor.h"
 //#include "fonts.h"
 
- void timerCompare0_ini(void){                              // -Initialization of the Timer Compare 0
+ void timerCompare0_ini(void){								  // -Initialization of the Timer Compare 0
 	TCCR0A  = 0;                                       	      // This regulates the menu navigation arrow to show where user is pointing                      
 	TCCR0B  = 0;                                                              
 	TCNT0   = 0;                                       
@@ -28,7 +28,7 @@ void timerCompare1_ini(void){                                 // -Initialization
 }
 
 void timerCompare2_ini(void){                                 // -Initialization of the Timer Compare 1 
-	TCCR2A  = 0;                                              // -Timer compare 1 A ISR, this regulates the shooting activity
+	TCCR2A  = 0;                                              // -Timer compare 1 A ISR, this regulates the rotary encoder refresh rate
 	TCCR2B  = 0;                                	                               
 	TCNT2   = 0;                                                              
 	OCR2A   = 124;                                            // -compare match register ((16MHz/1024/500Hz) - 1)
