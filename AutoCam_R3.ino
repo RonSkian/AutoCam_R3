@@ -119,7 +119,8 @@ void loop()  {                                  // -Menu navigation being is dis
 	//CSSProc();
 
 	//takePicture();
-	camContinuous(10, 3, 5);
+	//camContinuous(2, 2, 4);	//SSC < TBF therefore dT = TBF
+	camContinuous(4, 4, 2);		//SSC > TBF therefore dT = SSC
 	delay(10000);
 }
 

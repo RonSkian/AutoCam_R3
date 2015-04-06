@@ -17,7 +17,7 @@ void takePicture(void){
 	digitalWrite(releaseShutter, LOW);
 	//digitalWrite(A2, LOW);
 	delay(10);
-	Serial.println("Picture taken");
+	Serial.println("tP");
 }
 
 
@@ -29,7 +29,16 @@ void camContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF){
 
 	unsigned char cF;
 	//cF = current frame
+	unsigned char dT;
+	//dT = delay time between frames (w.r.t SSC & TBF)
 
+	if(SSC >= TBF){
+		dT = SSC;
+	}
+	else if(SSC < TBF){
+		dT = TBF;
+	}
+	//Determining if SSC or TBF should affect dT.
 	delay(50);
 	//Delay just a moment so the person is well away from the controls that might cause vibration to the camera
 	takePicture();
@@ -39,7 +48,7 @@ void camContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF){
 	while(NOF != cF){
 		//Serial.println(cSec);
 		//Serial.println(SSC);
-		if(delaySeconds_chk(SSC)){
+		if(delaySeconds_chk(dT)){
 			takePicture();
 			if(NOF >= cF){
 				delaySeconds_ini();
