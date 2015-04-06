@@ -45,6 +45,7 @@ void setup() {
 	stepperDistance = 10;	//stepper manual distance = 10mm
 	limSwHit = NO;
 	updt_stepperInfo();
+	Serial.begin(9600);
 	
 	//lcd.createChar(0, A);
 	//lcd.createChar(1, C);
