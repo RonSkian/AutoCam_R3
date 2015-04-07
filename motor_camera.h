@@ -7,4 +7,5 @@ void mCamContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF);
 	// SSC = Shutter Speed Compensation (measured in seconds)
 	// TBF  = Time Between Frames
 
+
 #endif
