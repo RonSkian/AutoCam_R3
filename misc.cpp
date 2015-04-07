@@ -12,7 +12,7 @@
 
 int delaySeconds_chk(unsigned int dV){
 	if(cSec == dV){
-		TIMSK1 &= (0 << OCIE1A);	//turn off timer2 compA interrupt
+		TIMSK1 &= (0 << OCIE1A);	//turn off timer1 compA interrupt
 		cSec = 0;
 		return 1;
 	}
@@ -25,7 +25,7 @@ int delaySeconds_chk(unsigned int dV){
 }
 
 void delaySeconds_ini(void){
-	TIMSK1 = (1 << OCIE1A);	//turn on timer2 compA interrupt
+	TIMSK1 = (1 << OCIE1A);	//turn on timer1 compA interrupt
 	cSec = 0;	//cSec reset
 }
 
