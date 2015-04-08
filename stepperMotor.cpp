@@ -26,7 +26,7 @@ void step(unsigned char dir, unsigned char stepMS, unsigned char stepLS){
 	// char dir = Direction (TRUE = CW = towards motor, FALSE = CCW = away from motor; note orientation is with the bottom of motor facing you)
 	// char stepMS = Most significant step value
 	// char stepLS = Least significant step value
-	// e.g 1.5 mm, stepMS = 1, stepLS = 5
+	// e.g 15 mm, stepMS = 1, stepLS = 5, only increases in 1 mm incements
 
 	enableMotor();			                            
 	digitalWrite(A5,dir);										

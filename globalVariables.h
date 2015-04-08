@@ -99,20 +99,20 @@ extern volatile unsigned int CSS_shutterNotDone;
 
 extern volatile unsigned int cSec;		//current seconds, used to keep track of the seconds that have past in Timer2 Comp A
 
-extern volatile unsigned char contShutterInterval;
-extern volatile char contHr;		//linked with cont+mtr mode
-extern volatile char contMin;		//linked with cont+mtr mode
-extern volatile char contSec;		//linked with cont+mtr mode
-
-extern volatile char stiHr;
-extern volatile char stiMin;
-extern volatile char stiSec;
-
-extern volatile char currHr;
-extern volatile char currMin;
-extern volatile char currSec;
-
-extern volatile char test;
+//extern volatile unsigned char contShutterInterval;
+//extern volatile char contHr;		//linked with cont+mtr mode
+//extern volatile char contMin;		//linked with cont+mtr mode
+//extern volatile char contSec;		//linked with cont+mtr mode
+//
+//extern volatile char stiHr;
+//extern volatile char stiMin;
+//extern volatile char stiSec;
+//
+//extern volatile char currHr;
+//extern volatile char currMin;
+//extern volatile char currSec;
+//
+//extern volatile char test;
 
 // extern volatile char stiHr_curr;
 // extern volatile char stiMin_curr;
