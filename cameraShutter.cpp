@@ -45,16 +45,17 @@ void camContinuous(unsigned char NOF, unsigned char SSC, unsigned char TBF){
 	delaySeconds_ini();
 	cF++;
 	Serial.println("first picture ^^");
-	while(NOF != cF){
+	while(TRUE){
 		//Serial.println(cSec);
 		//Serial.println(SSC);
 		if(delaySeconds_chk(dT)){
-			takePicture();
-			if(NOF >= cF){
+			if(cF < NOF){
+				takePicture();
 				delaySeconds_ini();
 				cF++;
 			}
 			else{
+				cF = 0;
 				break;
 			}
 		}
