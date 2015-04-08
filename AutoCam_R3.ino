@@ -32,6 +32,7 @@
 #include "initialization.h"
 //#include "fonts.h"
 #include "stepperMotor.h"
+#include "motor_camera.h"
 //#include "contShttrStppr.h"
 
 int incomingByte = 0;
@@ -118,9 +119,25 @@ void loop()  {                                  // -Menu navigation being is dis
 	// lcd.print(cSec, DEC);
 	//CSSProc();
 
+
 	//takePicture();
 	//camContinuous(2, 2, 4);	//SSC < TBF therefore dT = TBF
-	camContinuous(4, 4, 2);		//SSC > TBF therefore dT = SSC
+	//camContinuous(4, 4, 2);		//SSC > TBF therefore dT = SSC
+	//Serial.println("Done camCont");
+	//delay(10000);
+
+	//step(FALSE, 1, 0);
+	//delay(5000);
+	//step(FALSE, 1, 5);
+	//delay(5000);
+
+	//stepperDistance = 1;
+	//updt_stepperInfo();
+	//Serial.println(stepperDistanceMS);
+	//Serial.println(stepperDistanceLS);
+
+	mCamContinuous(2, 2, 0, 4, 1, TRUE);
+	Serial.println("Done mCamCont");
 	delay(10000);
 }
 
